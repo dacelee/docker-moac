@@ -45,7 +45,7 @@ https://github.com/MOACChain
    - to enable automatic payout
      - create vnode instance with name vnode2
        - docker run --name vnode2 --network moac lospringliu/moac
-         -/root/moac [--testnet] [--rpc [--rpcaddr 0.0.0.0]] [console]
+         - /root/moac [--testnet] [--rpc [--rpcaddr 0.0.0.0]] [console]
      - create payout instance with name payout
        - docker run --name payout --network moac lospringliu/moac
          - /root/open-moac-pool payout.json
