@@ -42,12 +42,12 @@ https://github.com/MOACChain
       - nginx
       - modify /root/build/open-moac-pool/www/config/environment.js
       - nvm install --lts=carbon ; npm install -g bower;  cd /root/build/open-moac-pool/www; git pull; rm -fr dist; npm install ; bower install --allow-root; ./build.sh
- - to enable automatic payout
-   - create vnode instance with name vnode2
-     - docker run --name vnode2 --network moac lospringliu/moac
-       - /root/moac [--testnet] [--rpc [--rpcaddr 0.0.0.0]] [console]
-   - create payout instance with name payout
-     - docker run --name payout --network moac lospringliu/moac
-       - /root/open-moac-pool payout.json
+  - to enable automatic payout
+    - create vnode instance with name vnode2
+      - docker run --name vnode2 --network moac lospringliu/moac
+        - /root/moac [--testnet] [--rpc [--rpcaddr 0.0.0.0]] [console]
+    - create payout instance with name payout
+      - docker run --name payout --network moac lospringliu/moac
+        - /root/open-moac-pool payout.json
 
 # you can read online https://github.com/lospringliu/docker-moac
