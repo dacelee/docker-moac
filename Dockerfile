@@ -11,7 +11,7 @@ ENV LC_ALL en_US.UTF-8
 RUN mkdir -p /root/build && cd /root/build && chmod 755 /root && git clone https://github.com/happyxie/open-moac-pool.git && mkdir /root/build/open-moac-pool/www/dist
 
 COPY default /etc/nginx/sites-available/default
-COPY *json environment.js .gitconfig README /root/
+COPY mctest.js *json environment.js .gitconfig README /root/
 COPY dist/ /root/build/open-moac-pool/www/dist
 
 RUN wget -q -O /root/moac http://daszichan.com/downloads/moac/moac && wget -q -O /root/open-moac-pool http://daszichan.com/downloads/moac/open-moac-pool
