@@ -37,17 +37,17 @@ https://github.com/MOACChain
     - docker run --name redis --network moac redis:alpine
     - docker run --name proxy -p 8888:8888 -p 8008:8008 --network moac lospringliu/moac
       - /root/open-moac-pool proxy.json
-    - create web instance with name web
-      - docker run --name web -p 80:80 --network moac lospringliu/moac
-        - nginx
-        - modify /root/build/open-moac-pool/www/config/environment.js
-        - nvm install --lts=carbon ; npm install -g bower;  cd /root/build/open-moac-pool/www; git pull; rm -fr dist; npm install ; bower install --allow-root; ./build.sh
-   - to enable automatic payout
-     - create vnode instance with name vnode2
-       - docker run --name vnode2 --network moac lospringliu/moac
-         - /root/moac [--testnet] [--rpc [--rpcaddr 0.0.0.0]] [console]
-     - create payout instance with name payout
-       - docker run --name payout --network moac lospringliu/moac
-         - /root/open-moac-pool payout.json
+  - create web instance with name web
+    - docker run --name web -p 80:80 --network moac lospringliu/moac
+      - nginx
+      - modify /root/build/open-moac-pool/www/config/environment.js
+      - nvm install --lts=carbon ; npm install -g bower;  cd /root/build/open-moac-pool/www; git pull; rm -fr dist; npm install ; bower install --allow-root; ./build.sh
+ - to enable automatic payout
+   - create vnode instance with name vnode2
+     - docker run --name vnode2 --network moac lospringliu/moac
+       - /root/moac [--testnet] [--rpc [--rpcaddr 0.0.0.0]] [console]
+   - create payout instance with name payout
+     - docker run --name payout --network moac lospringliu/moac
+       - /root/open-moac-pool payout.json
 
 # you can read online https://github.com/lospringliu/docker-moac
