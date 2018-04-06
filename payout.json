@@ -1,10 +1,10 @@
 {
 	"threads": 2,
 	"coin": "mc",
-	"name": "main",
+	"name": "payout",
 
 	"proxy": {
-		"enabled": true,
+		"enabled": false,
 		"listen": "0.0.0.0:8888",
 		"limitHeadersSize": 1024,
 		"limitBodySize": 256,
@@ -47,11 +47,11 @@
 	},
 
 	"api": {
-		"enabled": true,
+		"enabled": false,
 		"purgeOnly": false,
 		"purgeInterval": "10m",
 		"listen": "0.0.0.0:8080",
-		"statsCollectInterval": "5s",
+		"statsCollectInterval": "10s",
 		"hashrateWindow": "30m",
 		"hashrateLargeWindow": "3h",
 		"luckWindow": [64, 128, 256],
@@ -59,29 +59,29 @@
 		"blocks": 50
 	},
 
-	"upstreamCheckInterval": "5s",
+	"upstreamCheckInterval": "60s",
 	"upstream": [
 		{
 			"name": "main",
-			"url": "http://127.0.0.1:8545",
+			"url": "http://vnode2:8545",
 			"timeout": "10s"
 		},
 		{
 			"name": "backup",
-			"url": "http://127.0.0.2:8545",
+			"url": "http://vnode:8545",
 			"timeout": "10s"
 		}
 	],
 
 	"redis": {
-		"endpoint": "127.0.0.1:6379",
+		"endpoint": "redis:6379",
 		"poolSize": 10,
 		"database": 0,
 		"password": ""
 	},
 
 	"unlocker": {
-		"enabled": false,
+		"enabled": true,
 		"poolFee": 1.0,
 		"poolFeeAddress": "",
 		"donate": true,
@@ -89,7 +89,7 @@
 		"immatureDepth": 20,
 		"keepTxFees": false,
 		"interval": "10m",
-		"daemon": "http://127.0.0.1:8545",
+		"daemon": "http://vnode:8545",
 		"timeout": "10s"
 	},
 
@@ -97,9 +97,9 @@
 		"enabled": true,
 		"requirePeers": 25,
 		"interval": "120m",
-		"daemon": "http://127.0.0.1:8545",
+		"daemon": "http://vnode2:8545",
 		"timeout": "10s",
-		"address": "0x0",
+		"address": "0x0-------------------------------",
 		"gas": "21000",
 		"gasPrice": "50000000000",
 		"autoGas": true,

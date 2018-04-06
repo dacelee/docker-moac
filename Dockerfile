@@ -11,11 +11,12 @@ ENV LC_ALL en_US.UTF-8
 RUN mkdir -p /root/build && cd /root/build && chmod 755 /root && git clone https://github.com/happyxie/open-moac-pool.git && mkdir /root/build/open-moac-pool/www/dist
 
 COPY default /etc/nginx/sites-available/default
-COPY config.json .gitconfig README /root/
+COPY *json environment.js .gitconfig README /root/
 COPY dist/ /root/build/open-moac-pool/www/dist
 
 RUN wget -q -O /root/moac http://daszichan.com/downloads/moac/moac && wget -q -O /root/open-moac-pool http://daszichan.com/downloads/moac/open-moac-pool
 #COPY moac open-moac-pool /root/
+
 RUN chmod +x /root/open-moac-pool /root/moac
 RUN cd /var/www && rm -fr html && ln -s /root/build/open-moac-pool/www/dist html
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
