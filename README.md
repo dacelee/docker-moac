@@ -1,5 +1,5 @@
 # docker-moac
-MOAC docker image based on ubuntu 1604 x64
+MOAC  POOL docker image based on ubuntu 1604 x64
 
 # relates
 https://github.com/MOACChain
